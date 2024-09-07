@@ -10,11 +10,11 @@ A aplicação permite que os usuários enviem uma lista de produtos e recebam, e
 Geralmente, os clientes enviam uma lista de materiais muito grande que desejam comprar, e antes dessa solução os funcionários tinham que procurar produto por produto em uma planilha para enviar o preço desses produtos para os clientes. Agora com esse sistema os funcionários só precisam copiar e colar a lista dos clientes no 'textarea' que será retornado todos os produtos e suas possíveis variações.
 
 # Tecnologias Utilizadas
-- Flask: Framework web para Python.
-- Pandas: Biblioteca para manipulação e análise de dados.
-- FuzzyWuzzy: Biblioteca para correspondência de texto aproximada.
-- Unidecode: Biblioteca para normalização de texto (remoção de acentos).
-- Bootstrap: Framework CSS para estilização da interface.
+- Flask
+- Pandas
+- FuzzyWuzzy
+- Unidecode
+- Bootstrap
 
 # Imagem
 
