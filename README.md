@@ -6,8 +6,8 @@ Disponível em https://m9rcelo.pythonanywhere.com/
 # Descrição
 A aplicação permite que os usuários enviem uma lista de produtos e recebam, em resposta, os preços correspondentes, incluindo preços com desconto para pagamentos à vista (Pix/Dinheiro). A aplicação é desenvolvida com Flask e utiliza o FuzzyWuzzy para correspondência de texto, garantindo que mesmo variações mínimas nos nomes dos produtos sejam corretamente identificadas.
 
-# Caso
-Geralmente, os clientes enviam uma lista de materiais muito grande que desejam comprar, e antes dessa solução os funcionários tinham que procurar produto por produto em uma planilha para enviar o preço desses produtos para os clientes. Agora com esse sistema os funcionários só precisam copiar e colar a lista dos clientes no 'textarea' que será retornado todos os produtos e suas possíveis variações.
+# Caso de Uso
+Os clientes costumam enviar listas extensas de materiais que desejam comprar. Antes dessa solução, os funcionários precisavam buscar manualmente cada produto em uma planilha para informar os preços aos clientes. Com este sistema, basta copiar e colar a lista dos clientes no 'textarea', e o sistema retornará todos os produtos e suas possíveis variações.
 
 # Tecnologias Utilizadas
 - Flask
