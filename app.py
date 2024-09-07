@@ -5,7 +5,6 @@ from unidecode import unidecode
 
 app = Flask(__name__)
 
-# Carregar a lista de produtos
 df = pd.read_excel('lista_de_produtos.xlsx')
 produtos = {unidecode(item).lower(): preco for item, preco in zip(df['Item'], df['Preço'])}
 
@@ -21,22 +20,19 @@ def buscar_com_sinonimos(produto_cliente):
 def encontrar_produtos(produto_cliente, produtos, limite=10, pontuacao_minima=80):
     produto_cliente = buscar_com_sinonimos(produto_cliente)
     
-    # Busca múltiplos resultados que correspondem ao produto do cliente
     resultados = process.extract(
         produto_cliente, 
         produtos.keys(), 
-        scorer=fuzz.partial_ratio,  # Usa uma função de pontuação mais permissiva
+        scorer=fuzz.partial_ratio,
         limit=limite
     )
     
-    # Filtra resultados com base na pontuação mínima e que contém o termo da busca
     produtos_encontrados = [
         (produto, produtos[produto]) 
         for produto, score in resultados 
         if score >= pontuacao_minima and produto_cliente in produto
     ]
     
-    # Formata os nomes dos produtos para capitalização
     produtos_encontrados = [
         (produto.title(), preco) 
         for produto, preco in produtos_encontrados
@@ -55,7 +51,7 @@ def index():
             produtos_encontrados = encontrar_produtos(item, produtos)
             if produtos_encontrados:
                 for produto, preco in produtos_encontrados:
-                    preco_desconto = preco * 0.9  # Aplica 10% de desconto
+                    preco_desconto = preco * 0.9 #DESCONTO
                     resultados.append(f"{produto} \nPreço: R${preco:.2f} | Preço com Desconto (Pix/Dinheiro): R${preco_desconto:.2f}")
             else:
                 resultados.append(f"Produto '{item}' não encontrado na lista.")
