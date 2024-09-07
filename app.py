@@ -9,8 +9,6 @@ df = pd.read_excel('lista_de_produtos.xlsx')
 produtos = {unidecode(item).lower(): preco for item, preco in zip(df['Item'], df['Preço'])}
 
 sinonimos = {
-    'luva': 'luvas de procedimento (brancas, rosas ou pretas)',
-    'luvas': 'luvas de procedimento (brancas, rosas ou pretas)',
 }
 
 def buscar_com_sinonimos(produto_cliente):
